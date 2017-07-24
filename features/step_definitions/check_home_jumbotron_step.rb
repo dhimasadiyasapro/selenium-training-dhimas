@@ -39,8 +39,11 @@ Then(/^I should see Sign Up page$/) do
   expect(page).to have_content("Confirm Password") # Write code here that turns the phrase above into concrete actions
 end
 
-Given(/^click "([^"]*)" button$/) do |arg1|
-  find(arg1).click # Write code here that turns the phrase above into concrete actions
+Given(/^click "([^"]*)" button$/) do |str|
+  case str
+  when "Moka Video"
+    find(".watch-video-link>.btn-play").click
+  end
 end
 
 Then(/^I should see Moka Video$/) do

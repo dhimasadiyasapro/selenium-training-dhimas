@@ -30,7 +30,7 @@ Feature: Check Moka Home Jumbotron
 
   Scenario: Make sure able to play video
     Given I go to home page
-    And click ".watch-video-link>.btn-play" button
+    And click "Moka Video" button
     Then I should see Moka Video
 
   Scenario: Make sure able to check component's background image
