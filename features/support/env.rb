@@ -112,7 +112,7 @@ app_host, server_host, server_port, project, retry_times = case ENV['ENVIRONMENT
                                               when 'develop-stage'
                                                 ['http://backoffice-dev.mokapos.com', 'backoffice-dev.mokapos.com', '80', nil, 1]
                                               else
-                                                ['http://dev.mokapos.com', 'dev.mokapos.com', '80', nil, 1]
+                                                ['http://www.mokapos.com', 'www.mokapos.com', '80', nil, 1]
                                               end
 
 

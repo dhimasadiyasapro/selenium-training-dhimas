@@ -1,3 +1,14 @@
+Then(/^I should see jumbotron contents$/) do
+  expect(page).to have_content("Selling Made Easy")
+  expect(page).to have_content("Setup your Mobile Point of Sale in minutes and run your business from anywhere.")
+  expect(page).to have_css("img[src*='https://www.mokapos.com/assets/home/app-store-button-normal-70281c796a7eeda72873141f0fd20377.svg']")
+  expect(page).to have_css("img[src*='https://www.mokapos.com/assets/home/google-play-button-normal-496a97affc51be1481290f76812f82d0.svg']")
+  el = page.find(".container-fluid.container-content-index.visible-md.visible-lg.section-1")
+  jo = page.driver.browser.execute_script("return window.getComputedStyle(arguments[0])['background-image']", el.native)
+  ny = "url(\"https://www.mokapos.com/assets/home/jumbotron-homepage2-3ed64fa913ceff68389ed7041bfd0207.jpg\")"
+  jo.eql?(ny)
+end
+
 Then(/^I should see "([^"]*)"$/) do |arg1|
   expect(page).to have_content(arg1) # Write code here that turns the phrase above into concrete actions
 end
@@ -43,6 +54,12 @@ Given(/^click "([^"]*)" button$/) do |str|
   case str
   when "Moka Video"
     find(".watch-video-link>.btn-play").click
+  when "F&B Video"
+    find(".col-md-4:nth-child(1)>.service-heading>.watch-video-link").click
+  when "Service Business"
+    find(".col-md-4:nth-child(2)>.service-heading>.watch-video-link").click
+  when "Retail"
+    find(".col-md-4:nth-child(3)>.service-heading>.watch-video-link").click
   end
 end
 

@@ -2,7 +2,17 @@ Given(/^I visit "([^"]*)" component$/) do |comps|
   case comps
   when "All in Pricing"
     page.find(".container-fluid.section-34").hover
-  end # Write code here that turns the phrase above into concrete actions
+  when "Bring Your Business"
+    page.find(".section-2").hover
+  when "What Customer Say"
+    page.find(".testimonial-box").hover
+  when "Getting Started"
+    page.find(".section-5").hover
+  when "Get 30-day Free Trial"
+    page.find(".box-get-free:nth-child(3)").hover
+  when "Footer"
+    page.find("#footerWrapper").hover
+  end
 end
 
 Then(/^I should see All in Pricing contents$/) do

@@ -9,5 +9,6 @@ Feature: Check All in Pricing
 
   Scenario: Make sure TRY FREE NOW button on All in Pricing links to Sign Up page
     Given I go to home page
+    And I visit "All in Pricing" component
     And click link "TRY FREE NOW"
     Then I should see Sign Up page
