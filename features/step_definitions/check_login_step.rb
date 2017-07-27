@@ -1,5 +1,7 @@
 When(/^I input "([^"]*)" on User Email$/) do |emails|
-  fill_in "loginEmail", :with => emails # Write code here that turns the phrase above into concrete actions
+#  fill_in "loginEmail", :with => emails # Write code here that turns the phrase above into concrete actions
+#  find("#loginEmail").set(emails)
+  find("#loginEmail").send_keys emails
 end
 
 When(/^input "([^"]*)" on User Password$/) do |pass|
