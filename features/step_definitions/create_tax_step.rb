@@ -1,9 +1,12 @@
 When(/^I access Tax$/) do
+  sleep(2.to_i)
   click_link "Library"
+  sleep(2.to_i)
   click_link "Taxes"
 end
 
 When(/^I create tax with (\d+) and (\d+)$/) do |taxname, taxamount|
+  sleep(2.to_i)
   find(".new-tax>.pull-right.btn.btn-primary").click
   fill_in "name", :with => "Tax "+taxname
   fill_in "amount", :with => taxamount

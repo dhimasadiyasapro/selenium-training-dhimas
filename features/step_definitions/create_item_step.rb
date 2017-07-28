@@ -5,11 +5,15 @@ Given(/^I login to Mokapos$/) do
 end
 
 When(/^I access Item Library$/) do
-  click_link "Library" # Write code here that turns the phrase above into concrete actions
+  sleep(2.to_i)
+  click_link "Library"
+  #find("a", :text => "Library").click
 end
 
 When(/^I create item with (\d+) and (\d+)$/) do |iname, iprice|
-  find(".btn.btn-primary.element-non-mobi").click
+  #find(".btn.btn-primary.element-non-mobi").click
+  sleep(2.to_i)
+  find("button", :text => "Create Item").click
   fill_in "name", :with => "Item Joss "+iname
   fill_in "item_variant_price_0", :with => iprice
   find(".btn:nth-child(3).btn-primary.pull-right").click

@@ -1,9 +1,12 @@
 When(/^I access Gratuity$/) do
+  sleep(2.to_i)
   click_link "Library"
+  sleep(2.to_i)
   click_link "Gratuity"
 end
 
 When(/^I create gratuity with (\d+) and (\d+)$/) do |gratname, gratamount|
+  sleep(2.to_i)
   find(".new-gratuity>.pull-right.btn.btn-primary").click
   fill_in "name", :with => "Gratuity "+gratname
   fill_in "amount", :with => gratamount
