@@ -13,6 +13,7 @@ end
 
 Then(/^I should see moka logo$/) do
   expect(page).to have_css("img[src*='https://www.mokapos.com/assets/home/logo-moka-f45408be45f25e06608a8da66ee1e44f.svg']")
+  #expect(page).to have_css("img[src*='https://dev.mokapos.com/assets/home/logo-moka.svg']")
 end
 
 # expect(page).to have_css("img[src*='https://www.mokapos.com/assets/home/logo-moka-f45408be45f25e06608a8da66ee1e44f.svg']")
