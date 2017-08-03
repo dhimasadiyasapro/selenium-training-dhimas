@@ -82,6 +82,8 @@ require 'rspec/retry'
 require 'rspec/page-regression'
 #require 'selenium-webdriver'
 
+Dotenv::Railtie.load
+
 ENV['ENVIRONMENT'] ||= 'development'
 
 virtual_box = ENV['VIRTUAL_BOX']
@@ -93,13 +95,13 @@ virtual_box_port = ENV['VIRTUAL_BOX_PORT']
 ################## OS & Browser Settings ####################
 bs_os = ENV['BS_OS'] || 'OS X'
 bs_os_version = ENV['BS_OS_VERSION'] || 'El Capitan'
-#bs_browser = ENV['BS_BROWSER'] || 'Chrome'
-bs_browser = ENV['BS_BROWSER'] || 'Firefox'
+bs_browser = ENV['BS_BROWSER'] || 'Chrome'
+#bs_browser = ENV['BS_BROWSER'] || 'Firefox'
 bs_platform_name = "#{bs_os} #{bs_os_version}"
 
 platform = ENV['BROWSER_PLATFORM'] || ENV['BS_OS'] || 'MAC'
-#browser_name = ENV['BROWSER_NAME'] || ENV['BS_BROWSER'] || 'chrome'
-browser_name = ENV['BROWSER_NAME'] || ENV['BS_BROWSER'] || 'firefox'
+browser_name = ENV['BROWSER_NAME'] || ENV['BS_BROWSER'] || 'chrome'
+#browser_name = ENV['BROWSER_NAME'] || ENV['BS_BROWSER'] || 'firefox'
 browser_version = ENV['BROWSER_VERSION'] ||  ENV['BS_BROWSER_VERSION']
 resolution = '1920x1080'
 
@@ -113,7 +115,7 @@ app_host, server_host, server_port, project, retry_times = case ENV['ENVIRONMENT
                                               when 'develop-stage'
                                                 ['http://backoffice-dev.mokapos.com', 'backoffice-dev.mokapos.com', '80', nil, 1]
                                               else
-                                                ['http://dev.mokapos.com', 'dev.mokapos.com', '80', nil, 1]
+                                                ['http://dev.mokapos.com/', 'dev.mokapos.com', '80', nil, 1]
                                               end
 
 
