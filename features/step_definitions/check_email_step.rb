@@ -1,5 +1,6 @@
 Given(/^I've unverified email$/) do
   $email = get_unverified_email
+  puts $email
 end
 
 When(/^I try to verifying the email$/) do
