@@ -2,12 +2,9 @@
 Feature: Clean up Taxes
 
 Scenario Outline: Make sure 5 tax deleted
-  Given I go to home page
-  And click link "Login"
-  And I login to Mokapos
-  When I access Tax
+  Given I access Tax
   Then I should see <name> on tax list
-  And I can delete tax
+  And I can delete tax <name>
 
   Examples:
     | name  |
