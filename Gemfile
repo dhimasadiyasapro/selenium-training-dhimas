@@ -70,3 +70,5 @@ end
 gem 'dotenv-rails'
 gem 'tempmailru', '~> 0.0.1'
 gem 'curb', '~> 0.9.3'
+gem 'show_me_the_cookies'
+gem 'smarter_csv'
