@@ -4,7 +4,9 @@ cache: bundler
 rvm:
   - 2.4.1
 
-before_script: 'bundle install'
+before_script: 
+  - 'bundle update'
+  - 'bundle install'
 script: 'cucumber features/check_title_of_webpage.feature'
 
 branches:
