@@ -11,7 +11,7 @@ install: gem install rails
 
 before_script: 
   - 'bundle install'
-script: 'bundle exec cucumber features/check_title_of_webpage.feature'
+#script: 'bundle exec cucumber features/check_title_of_webpage.feature'
 
 branches:
   only:
